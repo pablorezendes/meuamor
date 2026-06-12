@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pablo & Jhulia — Nossa História ❤️‍🔥</title>
+<meta name="description" content="Uma homenagem de Pablo para Jhulia — Dia dos Namorados 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ══════════════════════ TOKENS ══════════════════════ */
+  :root{
+    --bg:#0b0716;
+    --bg2:#140d26;
+    --card:#171030;
+    --gold:#d4a853;
+    --gold-light:#f0d695;
+    --pink:#ff4d6d;
+    --pink-soft:#ff8fa3;
+    --text:#f3eefc;
+    --muted:#b9aed4;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --script:'Great Vibes','Brush Script MT',cursive;
+    --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    overflow-x:hidden;
+    cursor:default;
+  }
+  ::selection{background:var(--pink);color:#fff}
+
+  /* céu estrelado fixo */
+  #ceu{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .nebulosa{position:fixed;border-radius:50%;filter:blur(110px);opacity:.35;z-index:0;pointer-events:none;animation:flutua 18s ease-in-out infinite alternate}
+  .neb1{width:60vw;height:60vw;background:radial-gradient(circle,#4a1d6e,transparent 70%);top:-20vw;left:-15vw}
+  .neb2{width:50vw;height:50vw;background:radial-gradient(circle,#7a1f3d,transparent 70%);bottom:-10vw;right:-12vw;animation-delay:-9s}
+  @keyframes flutua{from{transform:translate(0,0) scale(1)}to{transform:translate(4vw,-3vw) scale(1.08)}}
+
+  main{position:relative;z-index:1}
+  section{position:relative;padding:110px 24px;max-width:1100px;margin:0 auto}
+
+  /* ══════════════════════ REVEAL ══════════════════════ */
+  .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+  .reveal.on{opacity:1;transform:none}
+
+  /* ══════════════════════ HERO ══════════════════════ */
+  .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;max-width:none}
+  .hero .pre{letter-spacing:.42em;text-transform:uppercase;font-size:.72rem;color:var(--gold);font-weight:600;animation:surge 1.4s ease both}
+  .nomes{font-family:var(--script);font-size:clamp(3.4rem,11vw,7.5rem);line-height:1.15;margin:18px 0 6px;background:linear-gradient(120deg,#fff 10%,var(--gold-light) 40%,var(--pink-soft) 75%,#fff 95%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brilho 7s linear infinite,surge 1.4s .2s ease both}
+  @keyframes brilho{to{background-position:220% center}}
+  @keyframes surge{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.6vw,1.5rem);color:var(--muted);max-width:560px;animation:surge 1.4s .45s ease both}
+  .hero .sub b{color:var(--gold-light);font-weight:500}
+
+  .contador{display:flex;gap:14px;margin-top:46px;flex-wrap:wrap;justify-content:center;animation:surge 1.4s .7s ease both}
+  .bloco{background:rgba(23,16,48,.6);border:1px solid rgba(212,168,83,.25);backdrop-filter:blur(8px);border-radius:16px;padding:16px 10px;min-width:92px;box-shadow:0 10px 36px rgba(0,0,0,.4)}
+  .bloco .num{font-family:var(--serif);font-size:2.3rem;font-weight:600;color:var(--gold-light);font-variant-numeric:tabular-nums;line-height:1}
+  .bloco .lab{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .desde{margin-top:18px;font-size:.78rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;animation:surge 1.4s .85s ease both}
+  .desde b{color:var(--pink-soft)}
+
+  .scrolldica{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;animation:surge 1.4s 1.2s ease both}
+  .coracaozinho{font-size:1.2rem;animation:pulsa 1.6s ease-in-out infinite}
+  @keyframes pulsa{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.25);opacity:1}}
+
+  /* ══════════════════════ TÍTULOS ══════════════════════ */
+  .titulo{text-align:center;margin-bottom:64px}
+  .titulo .olho{letter-spacing:.4em;text-transform:uppercase;font-size:.7rem;color:var(--pink-soft);font-weight:600}
+  .titulo h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5.4vw,3.2rem);margin-top:14px;color:var(--text)}
+  .titulo h2 em{font-style:italic;color:var(--gold-light)}
+  .titulo .filete{width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:22px auto 0}
+  .titulo p{color:var(--muted);font-size:.95rem;max-width:520px;margin:16px auto 0;line-height:1.7}
+
+  /* ══════════════════════ NÚMEROS ══════════════════════ */
+  .grade-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+  .stat{background:linear-gradient(160deg,rgba(31,21,60,.85),rgba(15,10,32,.85));border:1px solid rgba(212,168,83,.16);border-radius:20px;padding:30px 18px;text-align:center;transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .45s,box-shadow .45s}
+  .stat:hover{transform:translateY(-7px);border-color:rgba(255,77,109,.45);box-shadow:0 18px 50px rgba(255,77,109,.12)}
+  .stat .emoji{font-size:1.7rem}
+  .stat .valor{font-family:var(--serif);font-size:2.5rem;font-weight:600;color:var(--gold-light);margin:10px 0 4px;font-variant-numeric:tabular-nums}
+  .stat .desc{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.6}
+
+  /* ══════════════════════ TIMELINE / ARCANOS ══════════════════════ */
+  .linha-tempo{position:relative;padding:20px 0}
+  .linha-tempo::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(212,168,83,.5) 8%,rgba(212,168,83,.5) 92%,transparent)}
+  .arcano{position:relative;width:calc(50% - 44px);margin-bottom:74px}
+  .arcano:nth-child(odd){margin-right:auto;text-align:right}
+  .arcano:nth-child(even){margin-left:auto}
+  .arcano::after{content:"✦";position:absolute;top:8px;color:var(--gold);font-size:1.05rem;text-shadow:0 0 14px rgba(212,168,83,.9)}
+  .arcano:nth-child(odd)::after{right:-54px}
+  .arcano:nth-child(even)::after{left:-54px}
+
+  .carta-tarot{display:inline-block;width:100%;background:linear-gradient(165deg,#1d1438 0%,#120b26 100%);border:1px solid rgba(212,168,83,.34);border-radius:18px;padding:30px 28px;position:relative;box-shadow:0 22px 60px rgba(0,0,0,.5);transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s,border-color .5s;text-align:left}
+  .carta-tarot:hover{transform:translateY(-6px) rotate(-.4deg);border-color:rgba(240,214,149,.65);box-shadow:0 30px 80px rgba(212,168,83,.14)}
+  .carta-tarot::before,.carta-tarot::after{content:"";position:absolute;width:26px;height:26px;border-color:rgba(212,168,83,.55);border-style:solid;pointer-events:none}
+  .carta-tarot::before{top:9px;left:9px;border-width:1px 0 0 1px;border-radius:8px 0 0 0}
+  .carta-tarot::after{bottom:9px;right:9px;border-width:0 1px 1px 0;border-radius:0 0 8px 0}
+  .num-romano{font-family:var(--serif);font-size:.85rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .mini-arcano{float:right;width:86px;margin:6px 0 12px 16px;border-radius:8px;border:1px solid rgba(212,168,83,.55);box-shadow:0 10px 26px rgba(0,0,0,.55);transform:rotate(2.5deg);transform-origin:top right;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;cursor:zoom-in}
+  .carta-tarot:hover .mini-arcano{transform:rotate(0) scale(1.65);box-shadow:0 22px 54px rgba(0,0,0,.75);z-index:3;position:relative}
+  .num-romano::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(212,168,83,.45),transparent)}
+  .carta-tarot h3{font-family:var(--serif);font-size:1.75rem;font-weight:600;margin:10px 0 2px;color:#fff}
+  .carta-tarot .data{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-soft);margin-bottom:14px}
+  .carta-tarot p{color:var(--muted);font-size:.93rem;line-height:1.75}
+  .carta-tarot p+p{margin-top:10px}
+  .carta-tarot .foto{width:100%;border-radius:12px;margin-top:16px;display:block;border:1px solid rgba(212,168,83,.25);max-height:420px;object-fit:cover;object-position:center 30%}
+
+  .balao{margin-top:14px;background:#1f2c34;border-radius:12px;padding:12px 14px;font-size:.88rem;line-height:1.65;color:#e9edef;position:relative;border-left:3px solid var(--pink)}
+  .balao.eu{border-left:none;border-right:3px solid var(--gold);background:#005c4b22;background:#0f3b33}
+  .balao .quem{display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-soft);margin-bottom:6px;font-weight:600}
+  .balao.eu .quem{color:var(--gold-light)}
+  .balao .hora{display:block;text-align:right;font-size:.62rem;color:#8696a0;margin-top:6px}
+
+  .verso-musica{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.9;color:var(--gold-light);border-left:2px solid var(--gold);padding-left:18px;margin-top:14px}
+  .pill-musica{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.45);color:var(--gold-light);padding:9px 17px;border-radius:30px;font-size:.78rem;letter-spacing:.05em;cursor:pointer;transition:background .3s,transform .3s;margin:10px 8px 0 0;font-family:var(--sans)}
+  .pill-musica:hover{background:rgba(212,168,83,.22);transform:translateY(-2px)}
+  .pill-musica.ativa{background:linear-gradient(120deg,var(--pink),#c9184a);border-color:transparent;color:#fff}
+
+  /* ══════════════════════ CHAT REPLAY ══════════════════════ */
+  .telefone{max-width:420px;margin:0 auto;background:#0b141a;border:1px solid rgba(255,255,255,.09);border-radius:34px;overflow:hidden;box-shadow:0 40px 110px rgba(0,0,0,.65)}
+  .tele-topo{background:#1f2c34;padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .avatar{width:42px;height:42px;border-radius:50%;background:url('fotos/jhulia.jpg') center 20%/cover;border:2px solid var(--pink)}
+  .tele-topo .nome{font-weight:600;font-size:.95rem;color:#e9edef}
+  .tele-topo .status{font-size:.72rem;color:#8696a0}
+  .tele-corpo{padding:22px 14px 26px;display:flex;flex-direction:column;gap:9px;min-height:430px;background:radial-gradient(circle at 30% 20%,#10202a,#0b141a 70%)}
+  .msg{max-width:82%;padding:9px 13px;border-radius:10px;font-size:.86rem;line-height:1.55;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .5s ease,transform .5s cubic-bezier(.16,1,.3,1);position:relative;color:#e9edef}
+  .msg.show{opacity:1;transform:none}
+  .msg.ela{background:#1f2c34;align-self:flex-start;border-top-left-radius:2px}
+  .msg.eu{background:#005c4b;align-self:flex-end;border-top-right-radius:2px}
+  .msg .h{display:block;font-size:.6rem;color:#ffffff77;text-align:right;margin-top:4px}
+  .msg.separador{align-self:center;background:#1d2a33;color:#8696a0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:8px;max-width:none}
+  .digitando{align-self:flex-start;background:#1f2c34;border-radius:10px;padding:12px 16px;display:none;gap:4px}
+  .digitando.show{display:flex}
+  .digitando span{width:7px;height:7px;border-radius:50%;background:#8696a0;animation:dig 1.2s infinite}
+  .digitando span:nth-child(2){animation-delay:.18s}
+  .digitando span:nth-child(3){animation-delay:.36s}
+  @keyframes dig{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+
+  /* ══════════════════════ GALERIA ══════════════════════ */
+  .polaroids{display:flex;flex-wrap:wrap;gap:34px;justify-content:center;perspective:1000px}
+  .polaroid{background:#f7f2e9;padding:13px 13px 52px;border-radius:4px;box-shadow:0 22px 60px rgba(0,0,0,.55);transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s;position:relative;width:240px}
+  .polaroid img{width:100%;height:265px;object-fit:cover;object-position:center 28%;display:block;filter:saturate(1.05)}
+  .polaroid .legenda{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:var(--script);font-size:1.25rem;color:#3c2f4d}
+  .polaroid:nth-child(odd){transform:rotate(-3.2deg)}
+  .polaroid:nth-child(even){transform:rotate(2.6deg) translateY(12px)}
+  .polaroid:hover{transform:rotate(0) translateY(-10px) scale(1.05);box-shadow:0 36px 90px rgba(255,77,109,.22);z-index:2}
+
+  /* ══════════════════════ PLAYLIST ══════════════════════ */
+  .moldura-playlist{max-width:660px;margin:0 auto;background:linear-gradient(165deg,#1d1438,#120b26);border:1px solid rgba(212,168,83,.34);border-radius:22px;padding:18px;box-shadow:0 22px 60px rgba(0,0,0,.5);position:relative}
+  .moldura-playlist::before,.moldura-playlist::after{content:"";position:absolute;width:26px;height:26px;border-color:rgba(212,168,83,.55);border-style:solid;pointer-events:none}
+  .moldura-playlist::before{top:9px;left:9px;border-width:1px 0 0 1px;border-radius:8px 0 0 0}
+  .moldura-playlist::after{bottom:9px;right:9px;border-width:0 1px 1px 0;border-radius:0 0 8px 0}
+  .moldura-playlist iframe{display:block;border:none;border-radius:12px}
+  .nota-playlist{text-align:center;color:var(--muted);font-size:.8rem;margin-top:14px;font-style:italic;font-family:var(--serif);font-size:1.02rem}
+
+  /* ══════════════════════ CARTA ══════════════════════ */
+  .palco-carta{text-align:center}
+  .envelope{display:inline-block;cursor:pointer;position:relative;transition:transform .4s}
+  .envelope:hover{transform:scale(1.06)}
+  .envelope .selo{font-size:5.2rem;filter:drop-shadow(0 14px 40px rgba(255,77,109,.45));animation:pulsa 2s ease-in-out infinite;display:block}
+  .envelope .abrir{margin-top:14px;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-light)}
+  .papel{display:none;max-width:660px;margin:0 auto;background:linear-gradient(170deg,#fdf8ee,#f5ebd8);color:#41324f;border-radius:6px;padding:54px 48px;text-align:left;box-shadow:0 40px 120px rgba(0,0,0,.6);position:relative}
+  .papel.aberto{display:block;animation:abrecarta 1.1s cubic-bezier(.16,1,.3,1) both}
+  @keyframes abrecarta{from{opacity:0;transform:translateY(60px) rotateX(28deg)}to{opacity:1;transform:none}}
+  .papel::before{content:"❤️‍🔥";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:2.4rem}
+  .papel h3{font-family:var(--script);font-size:2.6rem;color:#a4133c;margin-bottom:22px;font-weight:400}
+  .papel p{font-family:var(--serif);font-size:1.18rem;line-height:1.95;margin-bottom:18px}
+  .papel .ass{font-family:var(--script);font-size:2.1rem;color:#a4133c;margin-top:30px}
+  .papel .ps{font-size:.95rem;color:#7d6b8f;font-style:italic}
+
+  /* ══════════════════════ FINAL ══════════════════════ */
+  .final{text-align:center;padding-bottom:160px}
+  .final .pergunta{font-family:var(--serif);font-size:clamp(1.7rem,4.6vw,2.7rem);font-style:italic;color:var(--text);max-width:700px;margin:0 auto 40px;line-height:1.5}
+  .botao-sim{font-family:var(--sans);font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:.95rem;color:#fff;background:linear-gradient(120deg,var(--pink),#c9184a);border:none;padding:20px 58px;border-radius:60px;cursor:pointer;box-shadow:0 16px 50px rgba(255,77,109,.4);transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden}
+  .botao-sim:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 24px 70px rgba(255,77,109,.55)}
+  .resposta-final{display:none;margin-top:54px}
+  .resposta-final.show{display:block;animation:surge 1s ease both}
+  .resposta-final .grande{font-family:var(--script);font-size:clamp(3rem,9vw,5.5rem);background:linear-gradient(120deg,var(--gold-light),var(--pink-soft));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .resposta-final .magia{font-family:var(--serif);font-size:1.5rem;color:var(--gold);letter-spacing:.4em;margin-top:14px}
+
+  footer{position:relative;z-index:1;text-align:center;padding:42px 20px 56px;color:var(--muted);font-size:.74rem;letter-spacing:.16em;border-top:1px solid rgba(212,168,83,.14)}
+  footer .horas{color:var(--gold);margin-top:8px;letter-spacing:.3em}
+
+  /* música flutuante */
+  .disco{position:fixed;bottom:26px;right:26px;z-index:50;width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#2a1c52,#120b26 70%);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;box-shadow:0 12px 40px rgba(0,0,0,.6);transition:transform .3s}
+  .disco:hover{transform:scale(1.1)}
+  .disco.tocando{animation:gira 3.4s linear infinite}
+  @keyframes gira{to{transform:rotate(360deg)}}
+  .disco-dica{position:fixed;bottom:42px;right:100px;z-index:50;background:rgba(23,16,48,.92);border:1px solid rgba(212,168,83,.4);color:var(--gold-light);padding:9px 16px;border-radius:30px;font-size:.72rem;letter-spacing:.1em;animation:pulsa 2.4s ease-in-out infinite;pointer-events:none}
+  .disco-dica.some{display:none}
+  .nome-faixa{position:fixed;bottom:42px;right:100px;z-index:50;background:rgba(23,16,48,.92);border:1px solid rgba(212,168,83,.4);color:var(--gold-light);padding:9px 16px;border-radius:30px;font-size:.72rem;letter-spacing:.06em;display:none;max-width:46vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nome-faixa.show{display:block}
+  .btn-pular{position:fixed;bottom:98px;right:38px;z-index:50;width:38px;height:38px;border-radius:50%;background:rgba(23,16,48,.92);border:1px solid var(--gold);color:var(--gold-light);display:none;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;transition:transform .3s}
+  .btn-pular:hover{transform:scale(1.12)}
+  .btn-pular.show{display:flex}
+
+  /* toast horário mágico */
+  .toast{position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-130px);z-index:60;background:rgba(23,16,48,.95);border:1px solid var(--gold);color:var(--gold-light);padding:14px 28px;border-radius:40px;font-family:var(--serif);font-size:1.05rem;transition:transform .6s cubic-bezier(.16,1,.3,1);box-shadow:0 18px 60px rgba(0,0,0,.6)}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* corações que sobem */
+  .coracao-voa{position:fixed;z-index:40;pointer-events:none;animation:voa linear forwards}
+  @keyframes voa{from{transform:translateY(0) rotate(0);opacity:1}to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+
+  @media(max-width:760px){
+    section{padding:80px 18px}
+    .linha-tempo::before{left:16px}
+    .arcano,.arcano:nth-child(odd),.arcano:nth-child(even){width:calc(100% - 52px);margin-left:52px;text-align:left}
+    .arcano:nth-child(odd)::after,.arcano:nth-child(even)::after{left:-44px;right:auto}
+    .bloco{min-width:74px;padding:13px 8px}
+    .bloco .num{font-size:1.7rem}
+    .papel{padding:40px 26px}
+    .disco-dica{display:none}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="ceu"></canvas>
+<div class="nebulosa neb1"></div>
+<div class="nebulosa neb2"></div>
+
+<!-- músicas: as que o Pablo criou contando a história (18/04/2026) -->
+<audio id="musica" src="musica/nossa-musica.mp3" preload="auto"></audio>
+<div class="disco-dica" id="discoDica">toca as nossas músicas 🎵</div>
+<div class="nome-faixa" id="nomeFaixa"></div>
+<div class="btn-pular" id="btnPular" title="próxima música">⏭</div>
+<div class="disco" id="disco" title="Nossas músicas">🎵</div>
+<div class="toast" id="toast"></div>
+
+<main>
+
+  <!-- ════════════ HERO ════════════ -->
+  <header class="hero">
+    <div class="pre">12 de junho de 2026 · Dia dos Namorados</div>
+    <h1 class="nomes">Pablo <span style="font-size:.6em">&</span> Jhulia</h1>
+    <p class="sub">Foi num casamento que o destino brincou —<br><b>teu olhar me encontrou e o tempo parou.</b></p>
+
+    <div class="contador" id="contador">
+      <div class="bloco"><div class="num" id="cDias">0</div><div class="lab">dias</div></div>
+      <div class="bloco"><div class="num" id="cHoras">0</div><div class="lab">horas</div></div>
+      <div class="bloco"><div class="num" id="cMin">0</div><div class="lab">minutos</div></div>
+      <div class="bloco"><div class="num" id="cSeg">0</div><div class="lab">segundos</div></div>
+    </div>
+    <div class="desde">vividos desde o primeiro <b>“Bom diiaa”</b> — 28.09.2025, 09:24</div>
+
+    <div class="scrolldica">
+      <span>nossa história</span>
+      <span class="coracaozinho">❤️‍🔥</span>
+    </div>
+  </header>
+
+  <!-- ════════════ NÚMEROS ════════════ -->
+  <section id="numeros">
+    <div class="titulo reveal">
+      <div class="olho">a matemática do nosso amor</div>
+      <h2>O que a gente construiu <em>em mensagens</em></h2>
+      <div class="filete"></div>
+      <p>Cada número abaixo saiu da nossa conversa de verdade — contado mensagem por mensagem, do primeiro dia até hoje.</p>
+    </div>
+    <div class="grade-stats">
+      <div class="stat reveal"><div class="emoji">💬</div><div class="valor" data-conta="19569">0</div><div class="desc">mensagens trocadas</div></div>
+      <div class="stat reveal"><div class="emoji">❤️‍🔥</div><div class="valor" data-conta="164">0</div><div class="desc">“te amo” escritos</div></div>
+      <div class="stat reveal"><div class="emoji">📸</div><div class="valor" data-conta="592">0</div><div class="desc">fotos compartilhadas</div></div>
+      <div class="stat reveal"><div class="emoji">🥹</div><div class="valor" data-conta="136">0</div><div class="desc">saudades confessadas</div></div>
+      <div class="stat reveal"><div class="emoji">🌅</div><div class="valor" data-conta="153">0</div><div class="desc">bons dias um pro outro</div></div>
+      <div class="stat reveal"><div class="emoji">😂</div><div class="valor" data-conta="1151">0</div><div class="desc">crises de risada</div></div>
+      <div class="stat reveal"><div class="emoji">🌙</div><div class="valor" data-conta="428">0</div><div class="desc">mensagens de madrugada</div></div>
+      <div class="stat reveal"><div class="emoji">🪄</div><div class="valor" data-conta="1563">0</div><div class="desc">figurinhas enviadas</div></div>
+    </div>
+  </section>
+
+  <!-- ════════════ TIMELINE / ARCANOS ════════════ -->
+  <section id="arcanos">
+    <div class="titulo reveal">
+      <div class="olho">uma leitura especial</div>
+      <h2>Os <em>Arcanos</em> da Nossa História</h2>
+      <div class="filete"></div>
+      <p>Você passou a vida lendo cartas para os outros, minha bruxa. Hoje, deixa eu tirar as cartas da nossa história — e cada momento nosso recebeu a carta que o universo escolheu pra ele.</p>
+    </div>
+
+    <div class="linha-tempo">
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano 0 · O Louco</div>
+          <img class="mini-arcano" src="fotos/arcanos/00-louco.jpg" alt="O Louco" title="O Louco — o salto de fé, o começo de toda jornada">
+          <h3>O Encontro</h3>
+          <div class="data">Setembro de 2025 · um casamento</div>
+          <p>Entre brindes e música, no meio da festa de outras pessoas, o destino resolveu escrever a nossa. Um olhar atravessou o salão — e alguma coisa, em silêncio, já sabia.</p>
+          <div class="verso-musica">“Foi num casamento, o destino brincou,<br>teu olhar me encontrou e o tempo parou.”</div>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano I · O Mago</div>
+          <img class="mini-arcano" src="fotos/arcanos/01-mago.jpg" alt="O Mago" title="O Mago — a palavra que cria, o primeiro movimento">
+          <h3>A Primeira Mensagem</h3>
+          <div class="data">28.09.2025 · 09:24</div>
+          <p>Tudo começou do jeito mais você possível: um bom dia cheio de energia e uma cobrança de mergulho. 😂</p>
+          <div class="balao"><span class="quem">Jhulia</span>Bom diiaa<br>Vocês não vão nem dar um mergulhoooo?<br>Agitaram e deram pra trás 😂😂😂<span class="hora">09:24</span></div>
+          <div class="balao eu"><span class="quem">Pablo</span>Boraaa 🙌<span class="hora">10:13</span></div>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano II · A Sacerdotisa</div>
+          <img class="mini-arcano" src="fotos/arcanos/02-sacerdotisa.jpg" alt="A Sacerdotisa" title="A Sacerdotisa — a intuição, a guardiã do invisível">
+          <h3>A Leitura</h3>
+          <div class="data">01.10.2025 · o tarô que mudou tudo</div>
+          <p>Eu fui pedir uma consulta de tarô… e a taróloga levou meu coração de brinde. Você ainda quis a sinastria astrológica — como se o universo já não tivesse deixado tudo óbvio.</p>
+          <div class="balao"><span class="quem">Jhulia</span>Quero seus dados pro Tarot. Mas também quero ver a sinastria astrológica rs 🔮<span class="hora">11:26</span></div>
+          <img class="foto" src="fotos/bruxos.jpg" alt="Pablo e Jhulia de bruxos" style="object-position:center 42%">
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano XVII · A Estrela</div>
+          <img class="mini-arcano" src="fotos/arcanos/17-estrela.jpg" alt="A Estrela" title="A Estrela — a esperança, o sonho que guia">
+          <h3>O Beijo Imaginado</h3>
+          <div class="data">02.10.2025</div>
+          <p>Antes de qualquer beijo existir, ele já vivia na imaginação — e olha que nem a imaginação chegou perto do que foi de verdade.</p>
+          <div class="balao eu"><span class="quem">Pablo</span>Eu fico imaginando como seria te beijar a primeira vez, qual vai ser a sensação… porque só de ficar perto de você já foi tão bom 😍<span class="hora">15:53</span></div>
+          <div class="balao eu"><span class="quem">Pablo</span>Acho que o seu olhar é o que mais sempre me chamou atenção…<span class="hora">15:58</span></div>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano III · A Imperatriz</div>
+          <img class="mini-arcano" src="fotos/arcanos/03-imperatriz.jpg" alt="A Imperatriz" title="A Imperatriz — o prazer, a entrega, a abundância">
+          <h3>A Magia</h3>
+          <div class="data">19.10.2025 · a primeira vez juntos</div>
+          <p>E quando finalmente aconteceu, foi você quem encontrou as palavras:</p>
+          <div class="balao"><span class="quem">Jhulia</span>Ter você comigo aqui foi muito mais do que eu imaginei! Cada detalhe, cada sorriso, cada gesto seu… tudo foi mágico. Já me sinto sua… e quero que seja assim. ❤️‍🔥<span class="hora">20:10</span></div>
+          <img class="foto" src="fotos/beijo.jpg" alt="Pablo e Jhulia se beijando" style="object-position:center 38%">
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano XIV · A Temperança</div>
+          <img class="mini-arcano" src="fotos/arcanos/14-temperanca.jpg" alt="A Temperança" title="A Temperança — o anjo da cura, o equilíbrio depois da tempestade">
+          <h3>O Renascimento</h3>
+          <div class="data">Novembro de 2025 · Uberlândia</div>
+          <p>A vida testou a gente cedo. E foi ali, nos dias mais difíceis, segurando a mão um do outro num corredor de hospital, que a gente descobriu do que esse amor era feito.</p>
+          <div class="verso-musica">“Uberlândia nos viu renascer —<br>do caos, um amor pra florescer.”</div>
+          <img class="foto" src="fotos/nos-dois.jpg" alt="Pablo e Jhulia" style="object-position:center 72%">
+          <button class="pill-musica" data-faixa="0">▶ a música que conta esse reencontro</button>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano VI · Os Enamorados</div>
+          <img class="mini-arcano" src="fotos/arcanos/06-enamorados.jpg" alt="Os Enamorados" title="Os Enamorados — a escolha do coração, a união das almas">
+          <h3>O Primeiro “Te Amo”</h3>
+          <div class="data">11.11.2025 · 00:22</div>
+          <p>Até o relógio conspirou: o portal 11/11, num horário terminando em 22 — os nossos números, no nosso momento.</p>
+          <div class="balao"><span class="quem">Jhulia</span>É louco sentir, mas eu já te amo. Parece loucura. Você fez isso comigo… O que eu sinto por você vai muito além de qualquer coisa. Você me traz vida, milhões de motivos e um propósito perdido de volta.<span class="hora">00:22</span></div>
+          <div class="balao eu"><span class="quem">Pablo</span>Saiba que você não ama sozinha… estou com você e quero te amar cada vez mais. ❤️‍🔥<span class="hora">00:29</span></div>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Dois de Copas · A União</div>
+          <img class="mini-arcano" src="fotos/arcanos/copas-02.jpg" alt="Dois de Copas" title="Dois de Copas — a carta do amor recíproco, um brinde de duas almas">
+          <h3>Meu &amp; Minha</h3>
+          <div class="data">15.11.2025 · 22:15</div>
+          <p>Uma foto sua, uma foto minha, duas palavras — e o contrato mais bonito do mundo estava assinado.</p>
+          <div class="balao"><span class="quem">Jhulia</span>📷 <em>(foto)</em> — Meu.<span class="hora">22:12</span></div>
+          <div class="balao eu"><span class="quem">Pablo</span>📷 <em>(foto)</em> — Minha.<span class="hora">22:13</span></div>
+          <div class="balao"><span class="quem">Jhulia</span>Sou sua. Toda sua.<span class="hora">22:16</span></div>
+          <div class="balao eu"><span class="quem">Pablo</span>Eu escolhi você e quero só você… te amo linda, e te quero mais que tudo 😍❤️‍🔥<span class="hora">22:19</span></div>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Dez de Copas · O Lar</div>
+          <img class="mini-arcano" src="fotos/arcanos/copas-10.jpg" alt="Dez de Copas" title="Dez de Copas — a felicidade do lar, o arco-íris da família">
+          <h3>Nossa Casa</h3>
+          <div class="data">2026 · a vida a dois</div>
+          <p>De mensagens de madrugada a acordar do seu lado todos os dias. Hoje existe um lugar no mundo que é nosso — com cheiro de café, energia de incenso, o Tesla mordendo nossas canelas e o Lion reinando no sofá. 🐾</p>
+          <div class="balao"><span class="quem">Jhulia</span>Eu sou tão grata por ter você na minha vida. Você é o meu sonho… é tão incrível olhar pra nós agora — eu sou realmente muito apaixonada por nós dois.<span class="hora">08.01.2026</span></div>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano VIII · A Força</div>
+          <img class="mini-arcano" src="fotos/arcanos/08-forca.jpg" alt="A Força" title="A Força — a doçura que doma feras (e tem um leão na carta 🦁)">
+          <h3>Tesla &amp; Lion</h3>
+          <div class="data">02.04.2026 · 19h · a família cresceu</div>
+          <p>Tudo começou com um ultimato em dezembro — e com a melhor resposta que eu já dei na vida:</p>
+          <div class="balao"><span class="quem">Jhulia</span>Vai mudar eu e o gato vira-lata pra aí. É pegar ou largar.<span class="hora">16.12.2025</span></div>
+          <div class="balao eu"><span class="quem">Pablo</span>O gato é nosso.<span class="hora">16.12.2025</span></div>
+          <p style="margin-top:14px">Em abril eles chegaram de Uberlândia: o Tesla, cinzinha, mordedor oficial de canelas — e o Lion, laranjinha, o leão da casa. Não é coincidência a carta deste capítulo ser A Força, a única do tarô com um leão dourado nela. 🦁</p>
+          <div class="balao"><span class="quem">Jhulia</span>Eles são yin e yang 🖤🤍<span class="hora">17.04.2026</span></div>
+          <img class="foto" src="fotos/yin-yang.jpg" alt="Tesla e Lion dormindo em yin-yang">
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano XIX · O Sol</div>
+          <img class="mini-arcano" src="fotos/arcanos/19-sol.jpg" alt="O Sol" title="O Sol — a alegria que canta, a luz que celebra">
+          <h3>A Música</h3>
+          <div class="data">18.04.2026</div>
+          <p>Teve um dia em que a nossa história virou canção. Eu mandei e só pedi uma coisa:</p>
+          <div class="balao eu"><span class="quem">Pablo</span>Coloca pra ouvir no carro e não fala nada 😅<span class="hora">17:42</span></div>
+          <p style="margin-top:14px">E não foi só uma. Elas estão aqui, ao vivo, neste site — aperta e ouve:</p>
+          <button class="pill-musica" data-faixa="0">▶ A de Uberlândia</button>
+          <button class="pill-musica" data-faixa="1">▶ Nossa favorita</button>
+          <button class="pill-musica" data-faixa="2">▶ Nossa favorita II</button>
+        </div>
+      </div>
+
+      <div class="arcano reveal">
+        <div class="carta-tarot">
+          <div class="num-romano">Arcano X · A Roda da Fortuna</div>
+          <img class="mini-arcano" src="fotos/arcanos/10-roda.jpg" alt="A Roda da Fortuna" title="A Roda da Fortuna — o destino que gira sempre a nosso favor">
+          <h3>Hoje — e Todos os Amanhãs</h3>
+          <div class="data">12.06.2026 · Dia dos Namorados</div>
+          <p>A roda girou e nos trouxe até aqui: 257 dias, 19.569 mensagens, uma casa, uma música, um amor. E o melhor de tudo? A leitura diz que isso é só o começo.</p>
+          <img class="foto" src="fotos/horizonte.jpg" alt="Pablo e Jhulia olhando a cidade" style="object-position:center 58%">
+          <div class="verso-musica">“E quando Jhulia tirou o tarô pra mim,<br>o universo sorriu — eu disse <b>sim</b>.”</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════ CHAT REPLAY ════════════ -->
+  <section id="conversa">
+    <div class="titulo reveal">
+      <div class="olho">aperte o play na memória</div>
+      <h2>Do <em>“Bom diiaa”</em> ao para sempre</h2>
+      <div class="filete"></div>
+      <p>A nossa história resumida nas mensagens que realmente mandamos um pro outro.</p>
+    </div>
+    <div class="telefone reveal" id="telefone">
+      <div class="tele-topo">
+        <div class="avatar"></div>
+        <div>
+          <div class="nome">Amor ❤️‍🔥 ❤️</div>
+          <div class="status">online</div>
+        </div>
+      </div>
+      <div class="tele-corpo" id="teleCorpo">
+        <div class="msg separador">28 de setembro de 2025</div>
+        <div class="msg ela">Bom diiaa<span class="h">09:24</span></div>
+        <div class="msg ela">Vocês não vão nem dar um mergulhoooo? 😂<span class="h">09:25</span></div>
+        <div class="msg eu">Boraaa 🙌<span class="h">10:13</span></div>
+        <div class="msg separador">alguns dias depois…</div>
+        <div class="msg eu">eu fico imaginando como seria te beijar a primeira vez… 😍<span class="h">02 out</span></div>
+        <div class="msg separador">11 de novembro · 00:22</div>
+        <div class="msg ela">É louco sentir, mas eu já te amo ❤️<span class="h">00:22</span></div>
+        <div class="msg eu">você não ama sozinha… ❤️‍🔥<span class="h">00:29</span></div>
+        <div class="msg ela">Sou sua. Toda sua.<span class="h">15 nov</span></div>
+        <div class="msg eu">2222<span class="h">22:22</span></div>
+        <div class="msg separador">12 de junho de 2026 ❤️‍🔥</div>
+        <div class="msg eu">Feliz Dia dos Namorados, amor da minha vida 😍<span class="h">hoje</span></div>
+        <div class="digitando" id="digitando"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ GALERIA ════════════ -->
+  <section id="galeria">
+    <div class="titulo reveal">
+      <div class="olho">retratos do nosso filme</div>
+      <h2>Momentos <em>nossos</em></h2>
+      <div class="filete"></div>
+    </div>
+    <div class="polaroids reveal">
+      <div class="polaroid"><img src="fotos/selfie.jpg" alt="Nós dois" style="object-position:center 38%"><div class="legenda">nós, sempre nós</div></div>
+      <div class="polaroid"><img src="fotos/jardim.jpg" alt="Beijo no jardim" style="object-position:center 30%"><div class="legenda">dourados de sol</div></div>
+      <div class="polaroid"><img src="fotos/bruxos.jpg" alt="Nós de bruxos" style="object-position:center 42%"><div class="legenda">presos por amor 🔮</div></div>
+      <div class="polaroid"><img src="fotos/sol.jpg" alt="Selfie no parque" style="object-position:center 35%"><div class="legenda">nosso sol</div></div>
+      <div class="polaroid"><img src="fotos/bebes.jpg" alt="Tesla e Lion" style="object-position:center 45%"><div class="legenda">nossos bebês 🐾</div></div>
+      <div class="polaroid"><img src="fotos/jhulia.jpg" alt="Jhulia"><div class="legenda">minha bruxa</div></div>
+      <div class="polaroid"><img src="fotos/pablo.jpg" alt="Pablo"><div class="legenda">teu, só teu</div></div>
+    </div>
+  </section>
+
+  <!-- ════════════ PLAYLIST ════════════ -->
+  <section id="playlist">
+    <div class="titulo reveal">
+      <div class="olho">aperta o play, amor</div>
+      <h2>Nossa <em>Trilha Sonora</em></h2>
+      <div class="filete"></div>
+      <p>A playlist que é só nossa — cada música aqui tem um pedaço da gente dentro.</p>
+    </div>
+    <div class="moldura-playlist reveal" id="molduraPlaylist">
+      <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/6vlJxL8JToGmNAjOUMDtXX?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Nossa playlist no Spotify"></iframe>
+      <div class="nota-playlist">— só minha e sua. ❤️‍🔥</div>
+    </div>
+  </section>
+
+  <!-- ════════════ CARTA ════════════ -->
+  <section id="carta">
+    <div class="titulo reveal">
+      <div class="olho">tem algo lacrado pra você</div>
+      <h2>Uma carta, <em>de mim pra você</em></h2>
+      <div class="filete"></div>
+    </div>
+    <div class="palco-carta reveal">
+      <div class="envelope" id="envelope">
+        <span class="selo">💌</span>
+        <div class="abrir">toque para abrir</div>
+      </div>
+      <div class="papel" id="papel">
+        <h3>Minha bruxa,</h3>
+        <p id="textoCarta"></p>
+        <div class="ass">Pablo</div>
+        <p class="ps">P.S.: 2222 ❤️‍🔥 — pra sempre os nossos números.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FINAL ════════════ -->
+  <section class="final">
+    <p class="pergunta reveal">“O universo sorriu, e eu disse sim.”<br>Agora me responde uma coisa, Jhulia…<br><b>aceita continuar escrevendo essa história comigo, arcano por arcano, pra sempre?</b></p>
+    <button class="botao-sim reveal" id="botaoSim">Sim, pra sempre ❤️‍🔥</button>
+    <div class="resposta-final" id="respostaFinal">
+      <div class="grande">Eu sabia. Te amo.</div>
+      <div class="magia">11:11 ✦ 22:22</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  feito com ❤️‍🔥 por Pablo, para Jhulia · Dia dos Namorados · 12.06.2026
+  <div class="horas">✦ 11:11 ✦ 22:22 ✦</div>
+</footer>
+
+<script>
+/* ═══════════════ CONFIG — edite aqui se quiser ═══════════════ */
+const INICIO = new Date(2025, 8, 28, 9, 24, 0); // 28/09/2025 09:24 — o primeiro "Bom diiaa"
+
+// ✍️ A CARTA — edite o texto à vontade:
+const CARTA = `Foi num casamento que o destino brincou — e eu nem desconfiava que, naquele salão, a carta mais importante da minha vida já estava virada na mesa: você.
+
+Você chegou com um "Bom diiaa" e nunca mais saiu. Eu fui pedir uma leitura de tarô e acabei encontrando o amor da minha vida. Você leu minhas cartas, leu minha alma — e eu li em você tudo o que eu sempre procurei.
+
+A gente renasceu junto em Uberlândia. Aprendi com você que amor também é segurar a mão nos dias difíceis, é cuidar, é ficar. E descobri que casa não é um lugar: é a gente. A gente e os nossos dois bebês — o Tesla mordendo nossas canelas e o Lion fingindo que não viu nada.
+
+Hoje são 19.569 mensagens, 164 "te amo" e uma vida inteira pela frente. Você me traz vida, milhões de motivos e um propósito de volta — você mesma me escreveu isso um dia, às 00:22 de um 11 de novembro. Eu nunca mais esqueci. Eu nunca vou esquecer.
+
+Te amo hoje, amanhã e em todos os arcanos que a gente ainda vai virar. Em todos os 11:11, eu peço você. Em todos os 22:22, eu agradeço por você.`;
+
+/* ═══════════════ CÉU ESTRELADO ═══════════════ */
+const ceu = document.getElementById('ceu');
+const ctx = ceu.getContext('2d');
+let estrelas = [], cadentes = [];
+function dimensiona(){
+  ceu.width = innerWidth; ceu.height = innerHeight;
+  estrelas = Array.from({length: Math.min(220, innerWidth/6)}, () => ({
+    x: Math.random()*ceu.width, y: Math.random()*ceu.height,
+    r: Math.random()*1.4+.3, f: Math.random()*Math.PI*2, v: Math.random()*.02+.006
+  }));
+}
+dimensiona(); addEventListener('resize', dimensiona);
+function novaCadente(){
+  cadentes.push({x: Math.random()*ceu.width*.8+ceu.width*.1, y: Math.random()*ceu.height*.35, vx: 7+Math.random()*5, vy: 3+Math.random()*2, vida: 1});
+  setTimeout(novaCadente, 6000+Math.random()*9000);
+}
+setTimeout(novaCadente, 3500);
+(function desenha(){
+  ctx.clearRect(0,0,ceu.width,ceu.height);
+  for(const e of estrelas){
+    e.f += e.v;
+    const a = .35 + Math.abs(Math.sin(e.f))*.65;
+    ctx.beginPath(); ctx.arc(e.x,e.y,e.r,0,7);
+    ctx.fillStyle = `rgba(243,238,252,${a})`; ctx.fill();
+  }
+  for(let i=cadentes.length-1;i>=0;i--){
+    const c = cadentes[i];
+    ctx.beginPath();
+    const grad = ctx.createLinearGradient(c.x,c.y,c.x-c.vx*9,c.y-c.vy*9);
+    grad.addColorStop(0,'rgba(240,214,149,.95)'); grad.addColorStop(1,'transparent');
+    ctx.strokeStyle = grad; ctx.lineWidth = 1.6;
+    ctx.moveTo(c.x,c.y); ctx.lineTo(c.x-c.vx*9,c.y-c.vy*9); ctx.stroke();
+    c.x += c.vx; c.y += c.vy; c.vida -= .016;
+    if(c.vida <= 0) cadentes.splice(i,1);
+  }
+  requestAnimationFrame(desenha);
+})();
+
+/* ═══════════════ CONTADOR AO VIVO ═══════════════ */
+function atualizaContador(){
+  let s = Math.floor((Date.now() - INICIO.getTime())/1000);
+  const d = Math.floor(s/86400); s -= d*86400;
+  const h = Math.floor(s/3600);  s -= h*3600;
+  const m = Math.floor(s/60);    s -= m*60;
+  cDias.textContent = d; cHoras.textContent = h; cMin.textContent = m; cSeg.textContent = s;
+}
+atualizaContador(); setInterval(atualizaContador, 1000);
+
+/* ═══════════════ REVEAL AO ROLAR ═══════════════ */
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }
+}), {threshold:.18});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ═══════════════ NÚMEROS CONTANDO ═══════════════ */
+const obsNum = new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return;
+  obsNum.unobserve(e.target);
+  const alvo = +e.target.dataset.conta, t0 = performance.now(), dur = 2100;
+  (function passo(t){
+    const p = Math.min((t-t0)/dur, 1), suave = 1-Math.pow(1-p,4);
+    e.target.textContent = Math.round(alvo*suave).toLocaleString('pt-BR');
+    if(p<1) requestAnimationFrame(passo);
+  })(t0);
+}), {threshold:.6});
+document.querySelectorAll('[data-conta]').forEach(el => obsNum.observe(el));
+
+/* ═══════════════ CHAT REPLAY ═══════════════ */
+const obsChat = new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return;
+  obsChat.unobserve(e.target);
+  const msgs = [...document.querySelectorAll('#teleCorpo .msg')];
+  const dig = document.getElementById('digitando');
+  let i = 0;
+  (function proxima(){
+    if(i >= msgs.length){ dig.classList.remove('show'); return; }
+    const m = msgs[i];
+    if(m.classList.contains('separador') || m.classList.contains('eu')){
+      dig.classList.remove('show');
+      m.classList.add('show'); i++;
+      setTimeout(proxima, m.classList.contains('separador') ? 700 : 1050);
+    } else {
+      dig.classList.add('show');
+      m.parentNode.insertBefore(dig, m);
+      setTimeout(() => {
+        dig.classList.remove('show');
+        m.classList.add('show'); i++;
+        setTimeout(proxima, 1050);
+      }, 900);
+    }
+  })();
+}), {threshold:.45});
+obsChat.observe(document.getElementById('telefone'));
+
+/* ═══════════════ CARTA (máquina de escrever) ═══════════════ */
+envelope.addEventListener('click', () => {
+  envelope.style.display = 'none';
+  papel.classList.add('aberto');
+  const destino = document.getElementById('textoCarta');
+  destino.style.whiteSpace = 'pre-wrap';
+  let i = 0;
+  (function escreve(){
+    if(i <= CARTA.length){
+      destino.textContent = CARTA.slice(0, i);
+      i += 2;
+      setTimeout(escreve, 14);
+    }
+  })();
+});
+
+/* ═══════════════ MÚSICAS — ✏️ renomeie as faixas aqui se quiser ═══════════════ */
+const TRILHAS = [
+  { src: 'musica/nossa-musica.mp3',   nome: 'A de Uberlândia ❤️‍🔥' },
+  { src: 'musica/nossa-musica-2.mp3', nome: 'Nossa favorita' },
+  { src: 'musica/nossa-musica-3.mp3', nome: 'Nossa favorita II' },
+];
+const musica = document.getElementById('musica');
+const disco = document.getElementById('disco');
+const nomeFaixa = document.getElementById('nomeFaixa');
+const btnPular = document.getElementById('btnPular');
+let faixa = 0;
+
+function tocar(i){
+  document.getElementById('discoDica').classList.add('some');
+  if(typeof i === 'number' && i !== faixa){ faixa = i; musica.src = TRILHAS[faixa].src; }
+  musica.play();
+}
+function atualizaPlayer(){
+  const tocando = !musica.paused;
+  disco.classList.toggle('tocando', tocando);
+  disco.textContent = tocando ? '🎶' : '🎵';
+  btnPular.classList.toggle('show', tocando);
+  nomeFaixa.textContent = '♪ ' + TRILHAS[faixa].nome;
+  nomeFaixa.classList.toggle('show', tocando);
+  document.querySelectorAll('.pill-musica').forEach(p =>
+    p.classList.toggle('ativa', +p.dataset.faixa === faixa && tocando));
+}
+musica.addEventListener('play', atualizaPlayer);
+musica.addEventListener('pause', atualizaPlayer);
+musica.addEventListener('ended', () => { faixa = (faixa + 1) % TRILHAS.length; musica.src = TRILHAS[faixa].src; musica.play(); });
+disco.addEventListener('click', () => { musica.paused ? tocar() : musica.pause(); });
+btnPular.addEventListener('click', () => { faixa = (faixa + 1) % TRILHAS.length; musica.src = TRILHAS[faixa].src; musica.play(); });
+document.querySelectorAll('.pill-musica').forEach(p =>
+  p.addEventListener('click', e => {
+    e.stopPropagation();
+    const i = +p.dataset.faixa;
+    (i === faixa && !musica.paused) ? musica.pause() : tocar(i);
+  }));
+
+/* pausa a música do site quando ela for mexer na playlist do Spotify */
+window.addEventListener('blur', () => {
+  if(document.activeElement && document.activeElement.tagName === 'IFRAME' && !musica.paused){
+    musica.pause();
+  }
+});
+
+/* ═══════════════ CORAÇÕES ═══════════════ */
+function chuvaDeCoracoes(qtd, xOrigem){
+  const tipos = ['❤️','❤️‍🔥','💖','💘','✨','💕'];
+  for(let i=0;i<qtd;i++){
+    const c = document.createElement('div');
+    c.className = 'coracao-voa';
+    c.textContent = tipos[Math.floor(Math.random()*tipos.length)];
+    c.style.left = (xOrigem != null ? xOrigem + (Math.random()*160-80) : Math.random()*innerWidth) + 'px';
+    c.style.top = innerHeight + 20 + 'px';
+    c.style.fontSize = (14 + Math.random()*26) + 'px';
+    c.style.animationDuration = (3.5 + Math.random()*3) + 's';
+    c.style.animationDelay = (Math.random()*1.2) + 's';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 8000);
+  }
+}
+document.addEventListener('click', e => {
+  if(e.target.closest('.disco,.envelope,.botao-sim,.pill-musica,.btn-pular')) return;
+  const c = document.createElement('div');
+  c.className = 'coracao-voa'; c.textContent = '❤️';
+  c.style.left = e.clientX+'px'; c.style.top = e.clientY+'px';
+  c.style.fontSize = '18px'; c.style.animationDuration = '2.6s';
+  document.body.appendChild(c); setTimeout(() => c.remove(), 2800);
+});
+
+/* ═══════════════ BOTÃO FINAL ═══════════════ */
+botaoSim.addEventListener('click', e => {
+  respostaFinal.classList.add('show');
+  botaoSim.style.display = 'none';
+  chuvaDeCoracoes(70);
+  if(musica.paused) tocar();
+});
+
+/* ═══════════════ HORÁRIOS MÁGICOS 11:11 / 22:22 ═══════════════ */
+let ultimoToast = '';
+setInterval(() => {
+  const ag = new Date();
+  const hm = String(ag.getHours()).padStart(2,'0') + ':' + String(ag.getMinutes()).padStart(2,'0');
+  if((hm === '11:11' || hm === '22:22') && ultimoToast !== hm + ag.getDate()){
+    ultimoToast = hm + ag.getDate();
+    const toast = document.getElementById('toast');
+    toast.textContent = hm === '11:11' ? '✨ 11:11 — faz um pedido, amor' : '❤️‍🔥 22:22 — os nossos números';
+    toast.classList.add('show');
+    chuvaDeCoracoes(22);
+    setTimeout(() => toast.classList.remove('show'), 9000);
+  }
+}, 5000);
+</script>
+</body>
+</html>
