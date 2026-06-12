@@ -7,18 +7,24 @@ services:
       - ./:/usr/share/nginx/html:ro
     networks:
       - traefik
+      - proxy
     labels:
       - "traefik.enable=true"
+      # HTTPS
       - "traefik.http.routers.meuamor.rule=Host(`meuamor.tarotdajhu.com.br`)"
       - "traefik.http.routers.meuamor.entrypoints=websecure"
       - "traefik.http.routers.meuamor.tls=true"
-      - "traefik.http.routers.meuamor.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.meuamor.tls.certresolver=le"
       - "traefik.http.services.meuamor.loadbalancer.server.port=80"
+      # HTTP -> HTTPS
+      - "traefik.http.routers.meuamor-web.rule=Host(`meuamor.tarotdajhu.com.br`)"
+      - "traefik.http.routers.meuamor-web.entrypoints=web"
+      - "traefik.http.routers.meuamor-web.middlewares=meuamor-redirect"
+      - "traefik.http.middlewares.meuamor-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.meuamor-redirect.redirectscheme.permanent=true"
 
-# Ajuste se a sua stack usar nomes diferentes (veja o README):
-#   - nome da rede do traefik   (aqui: traefik)
-#   - entrypoint https          (aqui: websecure)
-#   - certresolver              (aqui: letsencrypt)
 networks:
   traefik:
+    external: true
+  proxy:
     external: true
